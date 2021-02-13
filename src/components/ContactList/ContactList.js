@@ -2,12 +2,12 @@ import React from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import ContactListItem from "../ContactListItem/ContactListItem";
 import { connect } from "react-redux";
-import contactsActions from "../../redux/contacts/contactsActions";
+// git import contactsActions from "../../redux/contacts/contactsActions";
 import styles from "./ContactList.module.css";
 import PropTypes from "prop-types";
 import ContactItemFade from "./ContactItemFade.module.css";
 
-const ContactList = ({ contacts, onRemoveContact }) => (
+const ContactList = ({ contacts}) => (
   <TransitionGroup component="ul" className={styles.ContactList}>
     {contacts.map(({ id, name, number }) => (
       <CSSTransition key={id} timeout={250} classNames={{ ...ContactItemFade }}>
@@ -47,7 +47,7 @@ ContactList.propTypes = {
       number: PropTypes.string,
     }).isRequired
   ),
-  onRemoveContact: PropTypes.func.isRequired,
+  // onRemoveContact: PropTypes.func.isRequired,
 };
 
 // export default connect(mapStateToProps, mapDispatchToProps)(ContactList);
