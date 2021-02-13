@@ -35,9 +35,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = {
-  onRemoveContact: contactsActions.removeContact,
-};
+// const mapDispatchToProps = {
+//   onRemoveContact: contactsActions.removeContact,
+// };
 
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
@@ -50,4 +50,5 @@ ContactList.propTypes = {
   onRemoveContact: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ContactList);
+// export default connect(mapStateToProps, mapDispatchToProps)(ContactList);
+export default connect(mapStateToProps)(ContactList);
