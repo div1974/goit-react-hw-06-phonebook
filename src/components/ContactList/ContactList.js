@@ -2,14 +2,16 @@ import React from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import ContactListItem from "../ContactListItem/ContactListItem";
 import { connect } from "react-redux";
-// git import contactsActions from "../../redux/contacts/contactsActions";
+// import contactsActions from "../../redux/contacts/contactsActions";
 import styles from "./ContactList.module.css";
 import PropTypes from "prop-types";
 import ContactItemFade from "./ContactItemFade.module.css";
 
 const ContactList = ({ contacts}) => (
+// const ContactList = ({ contacts, onRemoveContact }) => (
   <TransitionGroup component="ul" className={styles.ContactList}>
-    {contacts.map(({ id, name, number }) => (
+    {contacts.map(({ id}) => (
+    // {contacts.map(({ id, name, number }) => (
       <CSSTransition key={id} timeout={250} classNames={{ ...ContactItemFade }}>
         <ContactListItem
           key={id}
